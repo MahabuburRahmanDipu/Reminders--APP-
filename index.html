@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Reminder</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="globalStyles.css" />
+    <link rel="stylesheet" href="jsHtmlEL.css" />
+    <!-- logo -->
+    <link
+      rel="shortcut icon"
+      href="./logo/Reminders (IOS APP).png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <!-- main page -->
+    <main>
+      <section id="header">
+        <p>Edit</p>
+      </section>
+
+      <section id="search-bar">
+        <div class="search-bar search-bar-active">
+          <iconify-icon icon="ion:search"></iconify-icon>
+          <input type="search" id="search" placeholder="Search" />
+          <div class="cancel-btn">
+            <h4>Cancel</h4>
+          </div>
+        </div>
+      </section>
+
+      <section id="main-lists">
+        <div class="lists-wrapper">
+          <div class="today box">
+            <div class="main-icon i-blue">
+              <iconify-icon icon="bi:calendar3-event"></iconify-icon>
+            </div>
+            <div class="m-num t-num">
+              <p>0</p>
+            </div>
+            <div class="m-text">
+              <h3>Today</h3>
+            </div>
+          </div>
+          <div class="Scheduled box">
+            <div class="main-icon i-red">
+              <iconify-icon icon="bi:calendar3"></iconify-icon>
+            </div>
+            <div class="m-num s-num">
+              <p>0</p>
+            </div>
+            <div class="m-text">
+              <h3>Scheduled</h3>
+            </div>
+          </div>
+          <div class="all box">
+            <div class="main-icon i-grey">
+              <iconify-icon icon="wpf:inbox"></iconify-icon>
+            </div>
+            <div class="m-num a-num">
+              <p>0</p>
+            </div>
+            <div class="m-text">
+              <h3>All</h3>
+            </div>
+          </div>
+          <div class="flagged box">
+            <div class="main-icon i-yellow">
+              <iconify-icon icon="fa6-solid:flag"></iconify-icon>
+            </div>
+            <div class="m-num f-num">
+              <p>0</p>
+            </div>
+            <div class="m-text">
+              <h3>Flagged</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="text">
+        <h4>My Lists</h4>
+      </div>
+
+      <section id="all-lists">
+        <div class="reminders">
+          <div class="r-icon">
+            <iconify-icon
+              icon="fluent:text-bullet-list-ltr-24-filled"
+            ></iconify-icon>
+          </div>
+          <div class="r-text">
+            <h3>Reminders</h3>
+          </div>
+          <div class="r-num">
+            <p>0</p>
+          </div>
+          <div class="arrow-icon">
+            <iconify-icon
+              icon="material-symbols:arrow-forward-ios-rounded"
+            ></iconify-icon>
+          </div>
+        </div>
+      </section>
+
+      <section id="footer">
+        <div class="footer-wrapper">
+          <div class="footer-page page-footer-addreminder">
+            <div class="add-iocn">
+              <iconify-icon
+                icon="material-symbols:add-circle-rounded"
+              ></iconify-icon>
+            </div>
+            <div class="footer-text">
+              <h4>New Reminder</h4>
+            </div>
+          </div>
+          <div class="add-list">
+            <p>Add List</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- main page end -->
+
+    <!-- main list pages -->
+    <section id="today-page" class="pages">
+      <div class="t-page-wrapper">
+        <div class="tpheader p-header">
+          <iconify-icon
+            icon="material-symbols:arrow-back-ios-rounded"
+          ></iconify-icon>
+          <h6>Lists</h6>
+        </div>
+        <div class="Tp-heading p-heading">
+          <h2>Today</h2>
+        </div>
+
+        <div class="p-middle-text">
+          <p>No Reminders</p>
+        </div>
+        <div class="footer-page page-footer-addreminder">
+          <div class="add-iocn">
+            <iconify-icon
+              icon="material-symbols:add-circle-rounded"
+            ></iconify-icon>
+          </div>
+          <div class="footer-text">
+            <h4>New Reminder</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scheduled-page" class="pages">
+      <div class="s-page-wrapper">
+        <div class="spheader p-header">
+          <iconify-icon
+            icon="material-symbols:arrow-back-ios-rounded"
+          ></iconify-icon>
+          <h6>Lists</h6>
+        </div>
+        <div class="overflow-y">
+          <div class="Sp-heading p-heading">
+            <h1>Scheduled</h1>
+            <h2>Today</h2>
+          </div>
+          <div class="add-iocn color-grey page-footer-addreminder">
+            <iconify-icon
+              icon="material-symbols:add-circle-rounded"
+            ></iconify-icon>
+            <div class="underline"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="all-page" class="pages">
+      <div class="all-page-wrapper">
+        <div class="apheader p-header">
+          <iconify-icon
+            icon="material-symbols:arrow-back-ios-rounded"
+          ></iconify-icon>
+          <h6>Lists</h6>
+        </div>
+        <div class="overflow-y">
+          <div class="Ap-heading p-heading">
+            <h1>All</h1>
+            <h2>Reminders</h2>
+          </div>
+
+          <!-- add all the today new reminders here -->
+          <div class="all-new-reminders"></div>
+          <!-- add all the today new reminders here end-->
+
+          <div class="add-iocn color-grey page-footer-addreminder">
+            <iconify-icon
+              icon="material-symbols:add-circle-rounded"
+            ></iconify-icon>
+            <div class="underline"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flagged-page" class="pages">
+      <div class="f-page-wrapper">
+        <div class="fpheader p-header">
+          <iconify-icon
+            icon="material-symbols:arrow-back-ios-rounded"
+          ></iconify-icon>
+          <h6>Lists</h6>
+        </div>
+        <div class="Fp-heading p-heading c-darkyellow">
+          <h2>Flagged</h2>
+        </div>
+        <div class="p-middle-text">
+          <p>No Reminders</p>
+        </div>
+        <div class="footer-page page-footer-addreminder">
+          <div class="add-iocn c-darkyellow">
+            <iconify-icon
+              icon="material-symbols:add-circle-rounded"
+            ></iconify-icon>
+          </div>
+          <div class="footer-text c-darkyellow">
+            <h4>New Reminder</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- main list pages end-->
+
+    <!-- [main > all-lists > reminders > page] -->
+    <div class="reminders-page">
+      <div class="reminder-page-wrapper pages">
+        <div class="reminder-p-header p-header">
+          <iconify-icon
+            icon="material-symbols:arrow-back-ios-rounded"
+          ></iconify-icon>
+          <h6>Lists</h6>
+        </div>
+        <div class="Tp-heading p-heading">
+          <h2>Reminders</h2>
+        </div>
+
+        <div class="rm-text p-middle-text">
+          <p>No Reminders</p>
+        </div>
+
+        <div class="footer-page page-footer-addreminder">
+          <div class="add-iocn">
+            <iconify-icon
+              icon="material-symbols:add-circle-rounded"
+            ></iconify-icon>
+          </div>
+          <div class="footer-text">
+            <h4>New Reminder</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- [main > all-lists > reminders > page] end-->
+
+    <!-- add new reminders page-->
+    <section id="AddNewReminders">
+      <div class="Nreminder-page-wrapper">
+        <div class="Nreminder-header">
+          <p class="ColorBlue NRcancel-btn">Cancel</p>
+          <p class="NRmiddle-Text">New Reminder</p>
+          <p class="color-grey addnewreminder-btn">Add</p>
+        </div>
+        <div class="AddNew-ReminderBox">
+          <div class="Reminder-Title">
+            <textarea
+              name="Title"
+              id="ReminderTitle"
+              placeholder="Title"
+            ></textarea>
+          </div>
+          <div class="dividerline"></div>
+          <div class="Reminder-Notes">
+            <textarea
+              name="Notes"
+              id="ReminderNotes"
+              placeholder="Notes"
+            ></textarea>
+          </div>
+        </div>
+        <div class="details-box">
+          <p>Details</p>
+          <iconify-icon
+            icon="material-symbols:arrow-forward-ios-rounded"
+          ></iconify-icon>
+        </div>
+        <div class="list-box">
+          <p>List</p>
+          <div class="selectedlist">
+            <div class="selectedlistcolor"></div>
+            <p>Reminders</p>
+            <iconify-icon
+              icon="material-symbols:arrow-forward-ios-rounded"
+            ></iconify-icon>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- add new reminders page end -->
+
+    <!-- add new reminders Details page -->
+    <section id="Details-Page">
+      <div class="Details-Page-wrapper">
+        <div class="Details-pHeader details-list-header">
+          <iconify-icon
+            icon="material-symbols:arrow-back-ios-rounded"
+          ></iconify-icon>
+          <h6>New Reminder</h6>
+        </div>
+        <div class="DP-middle-text details-list-M-text">
+          <p>Details</p>
+        </div>
+        <div class="reminder-date">
+          <input type="date" name="date" id="Date" />
+        </div>
+        <div class="reminder-time"></div>
+        <input type="time" name="time" id="Time" />
+      </div>
+    </section>
+    <!-- add new reminders Details page end -->
+
+    <!-- add new reminders list page -->
+    <section id="List-Page">
+      <div class="List-Page-wrapper">
+        <div class="List-pHeader details-list-header">
+          <iconify-icon
+            icon="material-symbols:arrow-back-ios-rounded"
+          ></iconify-icon>
+          <h6>New Reminder</h6>
+        </div>
+        <div class="LP-middle-text details-list-M-text">
+          <p>List</p>
+        </div>
+        <div class="All-Lists-from-my-lists">
+          <div class="listfromlists">
+            <div class="firstreminder">
+              <iconify-icon
+                icon="fluent:text-bullet-list-ltr-24-filled"
+              ></iconify-icon>
+            </div>
+            <div class="firstreminder-text">
+              <h3>Reminders</h3>
+            </div>
+            <div class="selected-icon">
+              <iconify-icon icon="ep:select"></iconify-icon>
+            </div>
+            <div class="underlineforlist"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- add new reminders list page end -->
+
+    <!-- add new list -->
+    <section id="AddNewList">
+      <div class="NList-page-wrapper">
+        <div class="NL-Top-wrapper">
+          <div class="NList-header">
+            <p class="ColorBlue NLcancel-btn">Cancel</p>
+            <p class="NLmiddle-Text">New List</p>
+            <p class="color-grey AddNewListBtn">Done</p>
+          </div>
+          <div class="NL-selected-C-i">
+            <iconify-icon
+              icon="material-symbols:format-list-bulleted-rounded"
+            ></iconify-icon>
+          </div>
+          <div class="NL-name">
+            <input type="text" id="NList-Name" placeholder="List Name" />
+            <iconify-icon
+              class="EmptyListInput"
+              icon="ic:round-cancel"
+            ></iconify-icon>
+          </div>
+        </div>
+        <div class="NL-Bottom-wrapper">
+          <div class="all-color-for-lists">
+            <div data-color="var(--red)" class="red colors"></div>
+            <div data-color="var(--darkyellow)" class="darkyellow colors"></div>
+            <div data-color="var(--yellow)" class="yellow colors"></div>
+            <div data-color="var(--green)" class="green colors"></div>
+            <div data-color="var(--ocean)" class="ocean colors"></div>
+            <div data-color="var(--blue)" class="blue colors"></div>
+            <div data-color="var(--purple)" class="purple colors"></div>
+            <div data-color="var(--cherry)" class="cherry colors"></div>
+            <div data-color="var(--pink)" class="pink colors"></div>
+            <div data-color="var(--brown)" class="brown colors"></div>
+            <div data-color="var(--grey)" class="grey colors"></div>
+            <div data-color="var(--lightpink)" class="lightpink colors"></div>
+          </div>
+          <div class="all-icons-for-list">
+            <iconify-icon
+              class="list"
+              icon="material-symbols:format-list-bulleted-rounded"
+            ></iconify-icon>
+            <iconify-icon
+              class="bookmark"
+              icon="ic:round-bookmark"
+            ></iconify-icon>
+            <iconify-icon
+              class="key"
+              icon="bi:key-fill"
+              rotate="90deg"
+            ></iconify-icon>
+            <iconify-icon
+              class="gift"
+              icon="teenyicons:gift-solid"
+            ></iconify-icon>
+            <iconify-icon class="cake" icon="ic:baseline-cake"></iconify-icon>
+            <iconify-icon
+              class="cap"
+              icon="fa6-solid:graduation-cap"
+            ></iconify-icon>
+            <iconify-icon
+              class="bag"
+              icon="game-icons:school-bag"
+            ></iconify-icon>
+            <iconify-icon
+              class="pencil"
+              icon="ri:pencil-ruler-fill"
+            ></iconify-icon>
+            <iconify-icon class="paper" icon="mdi:paper-outline"></iconify-icon>
+            <iconify-icon
+              class="book"
+              icon="majesticons:book-open"
+            ></iconify-icon>
+            <iconify-icon
+              class="drawer"
+              icon="fluent:drawer-add-24-filled"
+            ></iconify-icon>
+            <iconify-icon
+              class="bankcard"
+              icon="mingcute:bank-card-fill"
+            ></iconify-icon>
+            <iconify-icon
+              class="money"
+              icon="vaadin:money-withdraw"
+            ></iconify-icon>
+            <iconify-icon class="gym" icon="iconoir:gym"></iconify-icon>
+            <iconify-icon
+              class="run"
+              icon="material-symbols:directions-run"
+            ></iconify-icon>
+            <iconify-icon
+              class="fork"
+              icon="fluent-emoji-high-contrast:fork-and-knife"
+            ></iconify-icon>
+            <iconify-icon
+              class="glass"
+              icon="fa-solid:wine-glass"
+            ></iconify-icon>
+            <iconify-icon class="pills" icon="fa-solid:pills"></iconify-icon>
+            <iconify-icon class="doctor" icon="maki:doctor"></iconify-icon>
+            <iconify-icon
+              class="chair"
+              icon="lucide:rocking-chair"
+            ></iconify-icon>
+            <iconify-icon class="house" icon="bi:house-fill"></iconify-icon>
+            <iconify-icon
+              class="building"
+              icon="clarity:building-line"
+            ></iconify-icon>
+            <iconify-icon
+              class="bank"
+              icon="fluent:building-bank-28-filled"
+            ></iconify-icon>
+            <iconify-icon
+              class="assistant"
+              icon="material-symbols:assistant-navigation-rounded"
+            ></iconify-icon>
+            <iconify-icon
+              class="computer"
+              icon="material-symbols:computer-outline-rounded"
+            ></iconify-icon>
+            <iconify-icon
+              class="apple"
+              icon="fontisto:apple-music"
+            ></iconify-icon>
+            <iconify-icon class="imac" icon="mingcute:imac-fill"></iconify-icon>
+            <iconify-icon
+              class="game"
+              icon="ion:game-controller"
+            ></iconify-icon>
+            <iconify-icon
+              class="headphones"
+              icon="fa6-solid:headphones-simple"
+            ></iconify-icon>
+            <iconify-icon class="leaf" icon="bxs:leaf"></iconify-icon>
+            <iconify-icon class="carrot" icon="mdi:carrot"></iconify-icon>
+            <iconify-icon
+              class="human"
+              icon="mdi:human-handsdown"
+            ></iconify-icon>
+            <iconify-icon class="people" icon="eva:people-fill"></iconify-icon>
+            <iconify-icon class="raphael" icon="raphael:people"></iconify-icon>
+            <iconify-icon class="paw" icon="ion:paw"></iconify-icon>
+            <iconify-icon class="teddy" icon="mdi:teddy-bear"></iconify-icon>
+            <iconify-icon
+              class="fish"
+              icon="fa6-solid:fish-fins"
+            ></iconify-icon>
+            <iconify-icon
+              class="shopping"
+              icon="ps:shopping-cart"
+            ></iconify-icon>
+            <iconify-icon
+              class="cart"
+              icon="material-symbols:shopping-cart-rounded"
+            ></iconify-icon>
+            <iconify-icon
+              class="shoppingbag"
+              icon="material-symbols:shopping-bag"
+            ></iconify-icon>
+            <iconify-icon
+              class="boxvariant"
+              icon="mdi:box-variant-closed"
+            ></iconify-icon>
+            <iconify-icon
+              class="football"
+              icon="ion:football-sharp"
+            ></iconify-icon>
+            <iconify-icon
+              class="tennis"
+              icon="iconoir:tennis-ball-alt"
+            ></iconify-icon>
+            <iconify-icon
+              class="basketball"
+              icon="iconoir:basketball-alt"
+            ></iconify-icon>
+            <iconify-icon
+              class="american"
+              icon="tabler:ball-american-football"
+            ></iconify-icon>
+            <iconify-icon
+              class="racket"
+              icon="mdi:tennis-racket"
+            ></iconify-icon>
+            <iconify-icon
+              class="train"
+              icon="material-symbols:train"
+            ></iconify-icon>
+            <iconify-icon class="plane" icon="fa6-solid:plane"></iconify-icon>
+            <iconify-icon
+              class="sailboat"
+              icon="fa6-solid:sailboat"
+            ></iconify-icon>
+            <iconify-icon class="car" icon="fa6-solid:car-rear"></iconify-icon>
+            <iconify-icon
+              class="umbrella"
+              icon="mdi:umbrella-beach"
+            ></iconify-icon>
+            <iconify-icon class="sun" icon="akar-icons:sun-fill"></iconify-icon>
+            <iconify-icon class="moon" icon="ri:moon-fill"></iconify-icon>
+            <iconify-icon class="water" icon="mdi:water"></iconify-icon>
+            <iconify-icon class="snow" icon="ion:snow-sharp"></iconify-icon>
+            <iconify-icon class="fire" icon="bi:fire"></iconify-icon>
+            <iconify-icon class="uim" icon="uim:bag"></iconify-icon>
+            <iconify-icon class="tools" icon="fa-solid:tools"></iconify-icon>
+            <iconify-icon
+              class="scissors"
+              icon="heroicons:scissors-solid"
+            ></iconify-icon>
+            <iconify-icon
+              class="paint"
+              icon="ph:paint-roller-fill"
+            ></iconify-icon>
+            <iconify-icon
+              class="letter"
+              icon="uil:letter-english-a"
+            ></iconify-icon>
+            <iconify-icon class="code" icon="mdi:code-braces"></iconify-icon>
+            <iconify-icon
+              class="bulb"
+              icon="heroicons:light-bulb-solid"
+            ></iconify-icon>
+            <iconify-icon class="chatbox" icon="ion:chatbox"></iconify-icon>
+            <iconify-icon class="footsteps" icon="ion:footsteps"></iconify-icon>
+            <iconify-icon class="star" icon="charm:north-star"></iconify-icon>
+            <iconify-icon class="squre" icon="uim:squre-shape"></iconify-icon>
+            <iconify-icon
+              class="circle"
+              icon="material-symbols:circle"
+            ></iconify-icon>
+            <iconify-icon
+              class="triangle"
+              icon="ph:triangle-fill"
+            ></iconify-icon>
+            <iconify-icon class="rhombus" icon="mdi:rhombus"></iconify-icon>
+            <iconify-icon class="heart" icon="mdi:heart"></iconify-icon>
+            <iconify-icon
+              class="rounded"
+              icon="material-symbols:star-rounded"
+            ></iconify-icon>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- add new list end -->
+
+    <!-- js -->
+    <script src="app.js"></script>
+    <script src="Iconselect.js"></script>
+
+    <!-- js icons -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.2/dist/iconify-icon.min.js"></script>
+  </body>
+</html>
