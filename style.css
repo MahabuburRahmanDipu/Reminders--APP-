@@ -358,7 +358,7 @@
   padding: 1.2rem;
   border-radius: 15px 15px 0 0;
   position: absolute;
-  bottom: 0;
+  top: 6%;
   transform: translateY(100%);
   transition: all 0.5s ease-in-out;
 }
@@ -473,7 +473,7 @@
   padding: 0.9rem 1.2rem 1.2rem 1.2rem;
   border-radius: 15px 15px 0 0;
   position: absolute;
-  bottom: 0;
+  top: 6%;
   transform: translateX(100%);
   transition: all 0.3s ease-in-out;
 }
@@ -578,7 +578,7 @@
   padding: 1.2rem 1.2rem 0 1.2rem;
   border-radius: 15px 15px 0 0;
   position: absolute;
-  bottom: 0;
+  top: 6%;
   transform: translateY(100%);
   transition: all 0.5s ease-in-out;
 }
