@@ -33,7 +33,7 @@
   display: inline-block;
   position: absolute;
   right: 1.2rem;
-  top: 2.7rem;
+  top: 1.99rem;
   cursor: pointer;
 }
 .cancel-btn > h4 {
@@ -177,14 +177,14 @@
 #footer {
   position: absolute;
   width: 100%;
-  height: 3rem;
+  height: 4rem;
   bottom: 0rem;
   left: 0rem;
   background: var(--bg);
 }
 
 .footer-wrapper {
-  padding: 0.2rem 1.2rem 0 1.2rem;
+  padding: 0.2rem 1.2rem 0rem 1.2rem;
   display: flex;
   align-items: center;
 }
@@ -193,7 +193,7 @@
   display: flex;
   position: absolute;
   height: 3rem;
-  bottom: 0.3rem;
+  bottom: 1.29rem;
   align-items: center;
   cursor: pointer;
 }
@@ -354,7 +354,7 @@
 #AddNewReminders {
   background-color: var(--box);
   width: 100vw;
-  height: 97vh;
+  height: 94vh;
   padding: 1.2rem;
   border-radius: 15px 15px 0 0;
   position: absolute;
@@ -469,7 +469,7 @@
 #List-Page {
   background-color: var(--box);
   width: 100vw;
-  height: 97vh;
+  height: 94vh;
   padding: 0.9rem 1.2rem 1.2rem 1.2rem;
   border-radius: 15px 15px 0 0;
   position: absolute;
@@ -574,7 +574,7 @@
 #AddNewList {
   background-color: var(--box);
   width: 100vw;
-  height: 97vh;
+  height: 94vh;
   padding: 1.2rem 1.2rem 0 1.2rem;
   border-radius: 15px 15px 0 0;
   position: absolute;
