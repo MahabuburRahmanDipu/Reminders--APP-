@@ -6,8 +6,8 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
     font-family: 'Inter', 'Poppins', sans-serif;
     color: white;
 }
